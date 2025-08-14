@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower of Hanoi Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Tower of Hanoi</h1>
+    <div id="game-container">
+        <div class="tower" id="tower1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="disk" id="disk3" draggable="true" ondragstart="drag(event)" style="width: 150px;">3</div>
+            <div class="disk" id="disk2" draggable="true" ondragstart="drag(event)" style="width: 100px;">2</div>
+            <div class="disk" id="disk1" draggable="true" ondragstart="drag(event)" style="width: 50px;">1</div>
+        </div>
+        <div class="tower" id="tower2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="tower" id="tower3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+
+    <p id="status"></p>
+
+    <!-- Popup for Invalid Move -->
+    <div id="invalidMovePopup" class="popup">
+        <div class="popup-content">
+            <p>Invalid move! You can't place a larger disk on a smaller one.</p>
+            <button id="closePopupBtn">OK</button>
+        </div>
+    </div>
+
+    <!-- Bubble animation container -->
+    <div class="bubble-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
